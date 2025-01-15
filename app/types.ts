@@ -1,8 +1,9 @@
 export type ProductType = {
-    product_id: number;
-    // created_at: Date;
-    url: string;
-    product_name: string;
-    product_price: number;
-    purchased: boolean;
+    product_id: string;
+    default_price: string;
+    description?: string;
+    images: string[];
+    name: string;
+    category: string;
+    active: boolean;
 };
