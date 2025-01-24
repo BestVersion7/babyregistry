@@ -1,9 +1,11 @@
-import { ProductList } from "./components/ProductList";
+import { ProductForm } from "./components/ProductForm";
+import { getRegalos } from "./utils/apiCalls";
 
-export default function Home() {
+export default async function Home() {
+    const regalos = await getRegalos();
     return (
-        <div>
-            <ProductList />
-        </div>
+        <main>
+            <ProductForm regalos={regalos} />
+        </main>
     );
 }
