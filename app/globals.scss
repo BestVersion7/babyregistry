@@ -2,16 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    main {
-        @apply m-auto max-w-6xl px-1 py-3 sm:px-2 md:px-3;
-    }
+// @layer base {
+//     main {
+//         @apply m-auto max-w-6xl px-1 py-3 sm:px-2 md:px-3;
+//     }
 
-    header {
-        @apply shadow-lg;
-    }
+//     header {
+//         @apply shadow-lg;
+//     }
 
-    body {
-        @apply bg-slate-50
-    }
+//     body {
+//         @apply bg-slate-50
+//     }
+// }
+
+body {
+    background-color: #d9b38c; /* Light Coffee Color */
+    color: #3e2723; /* Dark Coffee Color */
+    font-family: 'Arial', sans-serif;
+}
+
+header, footer {
+    background-color: #f8a488; /* Light Orange */
+    color: #3e2723; /* Dark Coffee Color */
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    color: #6b4423; /* Medium Coffee Color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f57c00; /* Orange */
+    text-decoration: underline;
+}
+
+button {
+    background-color: #8d6e63; /* Coffee */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6b4423; /* Dark Coffee */
 }
