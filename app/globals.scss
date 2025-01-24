@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-// @layer base {
-//     main {
-//         @apply m-auto max-w-6xl px-1 py-3 sm:px-2 md:px-3;
-//     }
-
-//     header {
-//         @apply shadow-lg;
-//     }
-
-//     body {
-//         @apply bg-slate-50
-//     }
-// }
+@layer base {
+    main {
+        @apply m-auto max-w-6xl px-2 py-3 md:px-3;
+    }
 
 body {
     background-color: #d9b38c; /* Light Coffee Color */
@@ -50,3 +41,5 @@ button {
 button:hover {
     background-color: #6b4423; /* Dark Coffee */
 }
+}
+

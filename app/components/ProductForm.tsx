@@ -45,21 +45,21 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                         >
                             {item.item}
                         </label>
-                        {/* <span className="text-red-800 ml-5">{item.buyer}</span>
+                        <span className="text-red-800 ml-5">{item.buyer}</span>
                         <span className="text-red-800 ml-5">
                             {`${item.purchased}`}
-                        </span> */}
+                        </span>
                     </div>
                 ))}
             </form>
             <SubmitBtn selectedItems={selectedItems} />
-            {/* <button
+            <button
                 type="button"
                 onClick={() => resetAll()}
                 className="mt-2 w-full text-coffee-600 border border-coffee-600 py-2 px-4 rounded hover:bg-coffee-100 transition duration-200"
             >
                 Reset
-            </button> */}
+            </button>
         </div>
     );
 };

@@ -15,7 +15,7 @@ export const Modal = (props: {
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
             <div
-                className={`h-80 w-72 fixed px-3 flex flex-col justify-center inset-0 m-auto z-10 bg-violet-100  shadow-xl rounded-md`}
+            // className={`h-80 w-72 fixed px-3 flex flex-col justify-center inset-0 m-auto z-10 bg-violet-100  shadow-xl rounded-md`}
             >
                 {props.children}
             </div>

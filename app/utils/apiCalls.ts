@@ -15,6 +15,14 @@ export const getRegalos = async () => {
     return data;
 };
 
+export const getRegaloById = async (id: Number) => {
+    const res = await fetch(`${regaloOrigin}?id=${id}`, {
+        // next: { revalidate: revalidateTime },
+    });
+    const data: RegaloType[] = await res.json();
+    return data;
+};
+
 export const createRegalo = async (body: RegaloType) => {
     const res = await fetch(regaloOrigin, {
         method: "post",
