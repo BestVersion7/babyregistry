@@ -39,12 +39,12 @@ export async function POST(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
     try {
-        const { buyer, purchased } = await req.json();
+        const { buyer } = await req.json();
         const productId = req.nextUrl.searchParams.get("id");
         const data = await prisma.regalo.update({
             data: {
                 buyer,
-                purchased,
+                purchased: true,
             },
             where: {
                 id: Number(productId),

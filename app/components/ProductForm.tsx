@@ -2,6 +2,8 @@
 
 import { RegaloType } from "../types";
 import { useState } from "react";
+import { updateRegalo, resetAll } from "../utils/apiCalls";
+import { SubmitBtn } from "./SubmitBtn";
 
 export const ProductForm = (props: { regalos: RegaloType[] }) => {
     const { regalos } = props;
@@ -14,9 +16,8 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
         );
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(selectedItems);
     };
 
     return (
@@ -39,10 +40,19 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                         >
                             {item.item}
                         </label>
+                        <span className="text-red-800 ml-5">{item.buyer}</span>
+                        <span className="text-red-800 ml-5">
+                            {`${item.purchased}`}
+                        </span>
                     </div>
                 ))}
-                <button type="submit">Submit</button>
+                {/* <button type="submit">Submit</button> */}
             </form>
+            <SubmitBtn selectedItems={selectedItems} />
+
+            <button type="button" onClick={() => resetAll()}>
+                Reset
+            </button>
         </div>
     );
 };

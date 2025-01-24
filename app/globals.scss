@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+    main {
+        @apply m-auto max-w-6xl px-1 py-3 sm:px-2 md:px-3;
+    }
+
+    header {
+        @apply shadow-lg;
+    }
+
     body {
-        @apply p-0 m-auto bg-pink-50
+        @apply bg-slate-50
     }
 }
