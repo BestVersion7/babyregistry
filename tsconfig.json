@@ -27,7 +27,8 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "app/components/ProductItemtsx"
+        "app/components/ProductItemtsx",
+        "app/lib/prisma.js"
     ],
     "exclude": ["node_modules"]
 }

@@ -2,7 +2,7 @@
 
 import { RegaloType } from "../types";
 import { useState } from "react";
-import { updateRegalo, resetAll } from "../utils/apiCalls";
+// import { updateRegalo, resetAll } from "../utils/apiCalls";
 import { SubmitBtn } from "./SubmitBtn";
 
 export const ProductForm = (props: { regalos: RegaloType[] }) => {

@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
     try {
         const { item, buyer, purchased } = await req.json();
-        const data = await prisma.regalo.create({
+        await prisma.regalo.create({
             data: {
                 item,
                 buyer,
@@ -51,7 +51,7 @@ export async function PUT(req: NextRequest) {
     try {
         const { buyer } = await req.json();
         const productId = req.nextUrl.searchParams.get("id");
-        const data = await prisma.regalo.update({
+        await prisma.regalo.update({
             data: {
                 buyer,
                 purchased: true,

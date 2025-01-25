@@ -5,7 +5,7 @@ const regaloOrigin = `${BASE_URL}/api/regalo`;
 const resetOrigin = `${BASE_URL}/api/reset`;
 
 // const revalidateTime = 1;
-const revalidateTime = 60 * 60 * 24;
+// const revalidateTime = 60 * 60 * 24;
 
 export const getRegalos = async () => {
     const res = await fetch(regaloOrigin, {
@@ -15,7 +15,7 @@ export const getRegalos = async () => {
     return data;
 };
 
-export const getRegaloById = async (id: Number) => {
+export const getRegaloById = async (id: number) => {
     const res = await fetch(`${regaloOrigin}?id=${id}`, {
         // next: { revalidate: revalidateTime },
     });
