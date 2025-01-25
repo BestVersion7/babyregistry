@@ -31,7 +31,7 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
     return (
         <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg">
             <h2 className="text-4xl font-bold mb-4 text-center text-coffee-800">
-                Baby Shower Gift List
+                Lista de regalos para el baby shower
             </h2>
             <form onSubmit={handleSubmit}>
                 {regalos.map((item) => (

@@ -41,14 +41,14 @@ export const PurchaseForm = (props: {
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
                     <div className="bg-white p-8 shadow-lg rounded-lg text-center">
                         <p className="text-2xl font-semibold mb-4 text-coffee-800">
-                            Success
+                            Gracias
                         </p>
                         <button
                             onClick={handleClose}
                             type="button"
                             className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:cursor-pointer"
                         >
-                            Close
+                            Cerrar
                         </button>
                     </div>
                 </div>
@@ -59,14 +59,14 @@ export const PurchaseForm = (props: {
                             <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
                                 <div className="bg-white p-8 shadow-lg rounded-lg text-center">
                                     <p className="text-2xl font-semibold mb-4 text-coffee-800">
-                                        Please make a selection
+                                        Por favor, haga una selección
                                     </p>
                                     <button
                                         onClick={handleClose}
                                         type="button"
                                         className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:cursor-pointer"
                                     >
-                                        Close
+                                        Cerrar
                                     </button>
                                 </div>
                             </div>
@@ -76,17 +76,14 @@ export const PurchaseForm = (props: {
                                     onSubmit={handleSubmit}
                                     className="flex flex-col space-y-4"
                                 >
-                                    <h3
-                                        className="text-xl text-center font-semibold text-coffee-800"
-                                        id="modal-title"
-                                    >
-                                        Purchase
-                                    </h3>
+                                    {/* <h3 className="text-xl text-center font-semibold">
+                                        Lo llevaré
+                                    </h3> */}
                                     <label
                                         htmlFor="nameInput"
                                         className="text-gray-700"
                                     >
-                                        Name:
+                                        Nombre:
                                     </label>
                                     <input
                                         id="nameInput"
@@ -100,13 +97,18 @@ export const PurchaseForm = (props: {
                                         htmlFor="msgInput"
                                         className="text-gray-700"
                                     >
-                                        Items:
+                                        Llevaré estos articulos:
                                     </label>
 
                                     <ul>
                                         {props.selectedItems.map(
                                             (item, index) => (
-                                                <li key={index}>{item.item}</li>
+                                                <li
+                                                    className="list-disc list-inside "
+                                                    key={index}
+                                                >
+                                                    {item.item}
+                                                </li>
                                             )
                                         )}
                                     </ul>
@@ -116,14 +118,14 @@ export const PurchaseForm = (props: {
                                             type="submit"
                                             className="rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brown-500 hover:cursor-pointer"
                                         >
-                                            Submit
+                                            Enviar
                                         </button>
                                         <button
                                             onClick={handleClose}
                                             type="button"
                                             className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 hover:cursor-pointer"
                                         >
-                                            Cancel
+                                            Cancelar
                                         </button>
                                     </div>
                                 </form>

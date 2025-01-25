@@ -30,7 +30,7 @@ export const SubmitBtn = (props: {
                 onClick={handleOpen}
                 // disabled={props.selectedItems.length < 1}
             >
-                Purchase
+                Lo llevaré
             </button>
         </>
     );
