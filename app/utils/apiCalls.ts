@@ -34,7 +34,7 @@ export const createRegalo = async (body: RegaloType) => {
 
 export const updateRegalo = async (
     body: Pick<RegaloType, "buyer">,
-    id: string
+    id: number
 ) => {
     const res = await fetch(`${regaloOrigin}?id=${id}`, {
         method: "put",

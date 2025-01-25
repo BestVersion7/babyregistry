@@ -3,10 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { updateRegalo } from "../utils/apiCalls";
+import { RegaloType } from "../types";
 
-export const PurchaseForm = (props: { selectedItems: string[] }) => {
+export const PurchaseForm = (props: {
+    selectedItems: Pick<RegaloType, "id" | "item">[];
+}) => {
     const nameRef = useRef<HTMLInputElement>(null);
-    const msgRef = useRef<HTMLTextAreaElement>(null);
+    const selectedId = props.selectedItems.map((item) => item.id);
 
     const [completeForm, setCompleteForm] = useState(false);
 
@@ -20,7 +23,7 @@ export const PurchaseForm = (props: { selectedItems: string[] }) => {
                     {
                         buyer: `${nameRef.current?.value}`,
                     },
-                    props.selectedItems[i]
+                    Number(selectedId[i])
                 );
             }
             setCompleteForm(true);
@@ -77,15 +80,15 @@ export const PurchaseForm = (props: { selectedItems: string[] }) => {
                                 required
                             />
                             <label htmlFor="msgInput" className="text-gray-700">
-                                Message:
+                                Items:
                             </label>
-                            <textarea
-                                id="msgInput"
-                                title="Message"
-                                className="w-full h-24 p-2 border border-gray-300 rounded"
-                                ref={msgRef}
-                                required
-                            />
+
+                            <ul>
+                                {props.selectedItems.map((item, index) => (
+                                    <li key={index}>{item.item}</li>
+                                ))}
+                            </ul>
+
                             <div className="flex justify-center gap-2">
                                 <button
                                     type="submit"

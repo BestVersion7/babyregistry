@@ -3,8 +3,11 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "./Modal";
 import { PurchaseForm } from "./PurchaseForm";
+import { RegaloType } from "../types";
 
-export const SubmitBtn = (props: { selectedItems: string[] }) => {
+export const SubmitBtn = (props: {
+    selectedItems: Pick<RegaloType, "id" | "item">[];
+}) => {
     const router = useRouter();
     const handleOpen = () => {
         router.push(`${window.location.pathname}?modal=t`, {

@@ -7,12 +7,19 @@ import { SubmitBtn } from "./SubmitBtn";
 
 export const ProductForm = (props: { regalos: RegaloType[] }) => {
     const { regalos } = props;
-    const [selectedItems, setSelectedItems] = useState<string[]>([]);
+    const [selectedItems, setSelectedItems] = useState<
+        Pick<RegaloType, "id" | "item">[]
+    >([]);
+    const selectedItemsId = selectedItems.map((item) => item.id);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { id, checked } = e.target;
+        const { checked, value, id } = e.target;
+        // const id = parseInt(e.target.id);
+        const newValue = { id, item: value };
         setSelectedItems((prev) =>
-            checked ? [...prev, id] : prev.filter((item) => item !== id)
+            checked
+                ? [...prev, newValue]
+                : prev.filter((item) => item.id !== id)
         );
     };
 
@@ -32,9 +39,9 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                             type="checkbox"
                             id={item.id.toString()}
                             onChange={handleChange}
-                            value={item.id}
+                            value={item.item}
                             className="mr-2 h-5 w-5 text-coffee-500 focus:ring-coffee-400 border-coffee-300 rounded"
-                            checked={selectedItems.includes(item.id.toString())}
+                            checked={selectedItemsId.includes(item.id)}
                             disabled={item.purchased}
                         />
                         <label
