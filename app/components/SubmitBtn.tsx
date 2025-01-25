@@ -28,6 +28,7 @@ export const SubmitBtn = (props: {
                 // className="z-20  flex items-center gap-2 text-xl p-4 bg-yellow-300 text-blue-800 font-bold rounded-xl hover:bg-yellow-400 hover:cursor-pointer"
                 type="button"
                 onClick={handleOpen}
+                // disabled={props.selectedItems.length < 1}
             >
                 Purchase
             </button>
