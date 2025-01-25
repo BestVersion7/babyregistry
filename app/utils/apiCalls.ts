@@ -10,6 +10,7 @@ const resetOrigin = `${BASE_URL}/api/reset`;
 export const getRegalos = async () => {
     const res = await fetch(regaloOrigin, {
         // next: { revalidate: revalidateTime },
+        cache: "no-cache",
     });
     const data: RegaloType[] = await res.json();
     return data;
