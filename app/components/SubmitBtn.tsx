@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "./Modal";
 import { PurchaseForm } from "./PurchaseForm";
 import { RegaloType } from "../types";
+import { Suspense } from "react";
 
 export const SubmitBtn = (props: {
     selectedItems: Pick<RegaloType, "id" | "item">[];
@@ -16,7 +17,7 @@ export const SubmitBtn = (props: {
     };
     const modal = useSearchParams().get("modal");
     return (
-        <>
+        <Suspense>
             {modal === "t" && (
                 <Modal>
                     <PurchaseForm selectedItems={props.selectedItems} />
@@ -32,6 +33,6 @@ export const SubmitBtn = (props: {
             >
                 Purchase
             </button>
-        </>
+        </Suspense>
     );
 };
