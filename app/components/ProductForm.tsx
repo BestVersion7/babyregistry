@@ -3,7 +3,7 @@
 import { RegaloType } from "../types";
 import { useState } from "react";
 // import { updateRegalo, resetAll } from "../utils/apiCalls";
-import { resetAll } from "../utils/apiCalls";
+// import { resetAll } from "../utils/apiCalls";
 import { SubmitBtn } from "./SubmitBtn";
 
 export const ProductForm = (props: { regalos: RegaloType[] }) => {
@@ -61,13 +61,13 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                 ))}
             </form>
             <SubmitBtn selectedItems={selectedItems} />
-            <button
+            {/* <button
                 type="button"
                 onClick={() => resetAll()}
                 className="mt-2 w-full text-coffee-600 border border-coffee-600 py-2 px-4 rounded hover:bg-coffee-100 transition duration-200"
             >
                 Reset
-            </button>
+            </button> */}
         </div>
     );
 };
