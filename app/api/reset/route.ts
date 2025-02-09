@@ -6,6 +6,7 @@ export async function PUT() {
         await prisma.regalo.updateMany({
             data: {
                 purchased: false,
+                buyer: "",
             },
         });
         return NextResponse.json("çreated", { status: 201 });

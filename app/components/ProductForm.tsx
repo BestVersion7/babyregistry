@@ -2,7 +2,6 @@
 
 import { RegaloType } from "../types";
 import { useState } from "react";
-// import { updateRegalo, resetAll } from "../utils/apiCalls";
 // import { resetAll } from "../utils/apiCalls";
 import { SubmitBtn } from "./SubmitBtn";
 
@@ -53,8 +52,10 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                         >
                             {item.item}
                         </label>
-                        {/* <span className="text-red-800 ml-5">{item.buyer}</span>
-                        <span className="text-red-800 ml-5">
+                        <span className="text-red-800 font-semibold ml-3">
+                            {item.buyer}
+                        </span>
+                        {/* <span className="text-red-800 ml-5">
                             {`${item.purchased}`}
                         </span> */}
                     </div>
