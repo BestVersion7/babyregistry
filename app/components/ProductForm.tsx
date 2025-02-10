@@ -40,10 +40,11 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
             </h2>
             <form
                 onSubmit={handleSubmit}
-                className="flex-grow overflow-auto border-t-2 pt-2"
+                //flex-grow
+                className="overflow-auto border-t-2 pt-2"
             >
                 {regalos.map((item) => (
-                    <div key={item.id} className="flex mb-2">
+                    <div key={item.id} className="flex py-2">
                         <input
                             type="checkbox"
                             id={item.id.toString()}
@@ -56,7 +57,7 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
 
                         <label
                             htmlFor={item.id.toString()}
-                            className="grid grid-rows-2 text-gray-700"
+                            className=" text-gray-700"
                             // className={`grid grid-rows-2 text-gray-700 ${
                             //     item.purchased ? "line-through" : ""
                             // }`}
