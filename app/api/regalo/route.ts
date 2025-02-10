@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
         } else {
             data2 = await prisma.regalo.findMany({
                 orderBy: {
-                    id: "asc",
+                    item: "asc",
                 },
             });
         }
