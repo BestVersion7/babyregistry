@@ -2,7 +2,7 @@
 
 import { RegaloType } from "../types";
 import { useState } from "react";
-// import { resetAll } from "../utils/apiCalls";
+import { resetAll } from "../utils/apiCalls";
 import { SubmitBtn } from "./SubmitBtn";
 
 export const ProductForm = (props: { regalos: RegaloType[] }) => {
@@ -28,13 +28,22 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
     };
 
     return (
-        <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg">
-            <h2 className="text-4xl font-bold mb-4 text-center text-coffee-800">
-                Lista de regalos para el baby shower
+        <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg flex flex-col h-[calc(100vh-16px)] ">
+            <h2 className="text-4xl font-extrabold mb-3 text-center text-coffee-800">
+                <span className="text-white bg-gradient-to-r from-teal-500 to-teal-700 px-4 py-2 rounded-full shadow-md">
+                    Fredy & Evelyn
+                </span>
+                <br />
+                <span className="text-lg text-gray-700 italic">
+                    Lista de regalos para el baby shower
+                </span>
             </h2>
-            <form onSubmit={handleSubmit}>
+            <form
+                onSubmit={handleSubmit}
+                className="flex-grow overflow-auto border-t-2 pt-2"
+            >
                 {regalos.map((item) => (
-                    <div key={item.id} className="flex items-center mb-4">
+                    <div key={item.id} className="flex mb-2">
                         <input
                             type="checkbox"
                             id={item.id.toString()}
@@ -44,17 +53,27 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                             checked={selectedItemsId.includes(item.id)}
                             disabled={item.purchased}
                         />
+
                         <label
                             htmlFor={item.id.toString()}
-                            className={`text-gray-700 ${
-                                item.purchased ? "line-through" : ""
-                            }`}
+                            className="grid grid-rows-2 text-gray-700"
+                            // className={`grid grid-rows-2 text-gray-700 ${
+                            //     item.purchased ? "line-through" : ""
+                            // }`}
                         >
-                            {item.item}
+                            <span
+                                className={`${
+                                    item.purchased ? "line-through" : ""
+                                } `}
+                            >
+                                {item.item}
+                            </span>
                         </label>
-                        <span className="text-red-800 font-semibold ml-3">
-                            {item.buyer}
-                        </span>
+                        {item.buyer && (
+                            <span className="text-red-800 font-semibold ml-3">
+                                {`(${item.buyer})`}
+                            </span>
+                        )}
                         {/* <span className="text-red-800 ml-5">
                             {`${item.purchased}`}
                         </span> */}
@@ -62,13 +81,15 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
                 ))}
             </form>
             <SubmitBtn selectedItems={selectedItems} />
-            {/* <button
-                type="button"
-                onClick={() => resetAll()}
-                className="mt-2 w-full text-coffee-600 border border-coffee-600 py-2 px-4 rounded hover:bg-coffee-100 transition duration-200"
-            >
-                Reset
-            </button> */}
+            {process.env.NODE_ENV === "development" && (
+                <button
+                    type="button"
+                    onClick={() => resetAll()}
+                    className="mt-2 w-full text-coffee-600 border border-coffee-600 py-2 px-4 rounded hover:bg-coffee-100 transition duration-200"
+                >
+                    Reset
+                </button>
+            )}
         </div>
     );
 };
