@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "babyshower",
-    description: "babyshower",
+    title: "Lista de regalos",
+    description: "Baby Shower Lista de regalos para Fredy y Evelyn",
 };
 
 export default function RootLayout({
