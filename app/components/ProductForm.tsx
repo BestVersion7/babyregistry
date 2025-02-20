@@ -28,7 +28,7 @@ export const ProductForm = (props: { regalos: RegaloType[] }) => {
     };
 
     return (
-        <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg flex flex-col h-[calc(100vh-32px)] ">
+        <div className="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg flex flex-col h-[calc(100dvh-16px)] ">
             <h2 className="text-4xl font-extrabold mb-3 text-center text-coffee-800">
                 <span className="text-white bg-gradient-to-r from-orange-700 to-orange-900 px-4 py-2 rounded-full shadow-md">
                     Fredy & Evelyn
